@@ -15,18 +15,24 @@
     "execute": {
       "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
       "verb": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
       "body": {
         "mobile": "{{Contact.Default.MobileNumber}}",
         "name": "{{Contact.Default.FirstName}}"
-      }
+      },
+      "timeout": 10000
     }
   },
   "configurationArguments": {
     "validate": {
-      "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db"
+      "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
+      "verb": "POST"
     },
     "publish": {
-      "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db"
+      "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
+      "verb": "POST"
     }
   },
   "userInterfaces": {
