@@ -1,0 +1,39 @@
+{
+  "workflowApiVersion": "1.1",
+  "type": "REST",
+  "metaData": {
+    "icon": "https://via.placeholder.com/40",
+    "category": "message"
+  },
+  "lang": {
+    "en-US": {
+      "name": "Test Custom Activity",
+      "description": "Testing Custom Activity via Webhook"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
+      "verb": "POST",
+      "body": {
+        "mobile": "{{Contact.Default.MobileNumber}}",
+        "name": "{{Contact.Default.FirstName}}"
+      }
+    }
+  },
+  "configurationArguments": {
+    "validate": {
+      "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db"
+    },
+    "publish": {
+      "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db"
+    }
+  },
+  "userInterfaces": {
+    "configModal": {
+      "height": 300,
+      "width": 400,
+      "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db"
+    }
+  }
+}
