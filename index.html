@@ -2,8 +2,27 @@
 <html>
 <head>
   <title>Custom Activity</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/postmonger/0.0.16/postmonger.min.js"></script>
 </head>
 <body>
-  <h3>Custom Activity Config Loaded</h3>
+  <h3>Custom Activity Loaded</h3>
+
+  <script>
+    var connection = new Postmonger.Session();
+
+    connection.trigger('ready');
+
+    connection.on('initActivity', function(data) {
+        console.log("Activity Initialized", data);
+    });
+
+    connection.on('clickedNext', function() {
+        connection.trigger('nextStep');
+    });
+
+    connection.on('clickedBack', function() {
+        connection.trigger('prevStep');
+    });
+  </script>
 </body>
 </html>
