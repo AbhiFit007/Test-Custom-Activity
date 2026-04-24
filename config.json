@@ -4,27 +4,21 @@
   "metaData": {
     "icon": "https://via.placeholder.com/40",
     "category": "message",
-    "isConfigured": false
+    "isConfigured": true
   },
   "lang": {
     "en-US": {
       "name": "Test Custom Activity",
-      "description": "Testing Custom Activity via Webhook"
+      "description": "Webhook test"
     }
   },
   "arguments": {
     "execute": {
       "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
       "verb": "POST",
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "body": {},
       "inArguments": [
         {
-          "mobile": "{{Contact.Default.MobileNumber}}"
-        },
-        {
+          "mobile": "{{Contact.Default.MobileNumber}}",
           "name": "{{Contact.Default.FirstName}}"
         }
       ],
@@ -32,15 +26,11 @@
     }
   },
   "configurationArguments": {
-    "validate": {
-      "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
-      "verb": "POST"
-    },
     "publish": {
       "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
       "verb": "POST"
     },
-    "save": {
+    "validate": {
       "url": "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
       "verb": "POST"
     }
