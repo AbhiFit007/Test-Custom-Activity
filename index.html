@@ -13,15 +13,23 @@
     connection.trigger('ready');
 
     connection.on('initActivity', function(data) {
-        console.log("Activity Initialized", data);
+      console.log('initActivity', data);
+    });
+
+    connection.on('requestedTokens', function(tokens) {
+      console.log(tokens);
     });
 
     connection.on('clickedNext', function() {
-        connection.trigger('nextStep');
+      connection.trigger('updateActivity', {});
     });
 
     connection.on('clickedBack', function() {
-        connection.trigger('prevStep');
+      connection.trigger('prevStep');
+    });
+
+    connection.on('clickedCancel', function() {
+      connection.trigger('destroy');
     });
   </script>
 </body>
